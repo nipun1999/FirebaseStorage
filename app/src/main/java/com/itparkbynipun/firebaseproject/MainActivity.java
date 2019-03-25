@@ -34,23 +34,23 @@ public class MainActivity extends AppCompatActivity {
         nameDatabase = FirebaseDatabase.getInstance().getReference();
 
         //pulling the data
-//        nameDatabase.child("Names").push().addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-//
-//                String name = dataSnapshot.child("name")
-//                        .getValue()
-//                        .toString();
-//                nameTxt.setText(name);
-//
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError databaseError) {
-//
-//                 Log.e("Classname",databaseError.toString());
-//            }
-//        });
+        nameDatabase.child("Names").push().addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                String name = dataSnapshot.child("name")
+                        .getValue()
+                        .toString();
+                nameTxt.setText(name);
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                 Log.e("Classname",databaseError.toString());
+            }
+        });
 
         //pushing the data
         addbtn.setOnClickListener(new View.OnClickListener() {
